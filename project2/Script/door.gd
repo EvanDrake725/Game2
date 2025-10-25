@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
 	var Player_Group=get_node("/root/Node2D/Player_TD")
 	var Terminal_State=get_node("/root/Node2D/Terminal")
 	if Input.is_action_just_pressed("Interact"):
-		if Player_Group.Group=="partner":
-			if Terminal_State.Used=="Using":
+		if Terminal_State.Used=="Using":
+			if Player_Group.Group=="partner":
 					self.queue_free()
-		else:
-			print("Cannot open")
+			else:
+				print("Cannot open")
 	pass

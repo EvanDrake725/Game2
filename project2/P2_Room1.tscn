@@ -48,7 +48,6 @@ texture = ExtResource("1_xa32j")
 
 [node name="Terminal" parent="." instance=ExtResource("5_4jjlf")]
 position = Vector2(676, 106)
-scale = Vector2(0.599999, 0.599999)
 
 [node name="Door" parent="." instance=ExtResource("6_4jjlf")]
 position = Vector2(750, 263)
