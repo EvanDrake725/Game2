@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3vo0flpx365h"]
+
+[ext_resource type="Script" uid="uid://cr7vonudeg6tj" path="res://Scenes/bullet.gd" id="1_14k46"]
+[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_qvus8"]
+[ext_resource type="Script" uid="uid://bhuapbdx16u3q" path="res://Script/hurt_box.gd" id="3_qvus8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14k46"]
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_14k46")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.440001, 0.440001)
+texture = ExtResource("2_qvus8")
+offset = Vector2(50, 0)
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_qvus8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(21, 0)
+scale = Vector2(2.96, 2.96)
+shape = SubResource("CircleShape2D_14k46")
+
+[connection signal="body_entered" from="HurtBox" to="HurtBox" method="_on_body_entered"]

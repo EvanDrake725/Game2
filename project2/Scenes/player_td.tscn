@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://wncwry54i1x1"]
 
 [ext_resource type="Script" uid="uid://dilytulokg4k3" path="res://Script/player_td.gd" id="1_436xv"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_tcu1o"]
+[ext_resource type="Texture2D" uid="uid://c7y1aot7w1m2e" path="res://Sprites/PlayergameSprite.png" id="2_436xv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
 
@@ -14,20 +14,23 @@ size = Vector2(20, 18.7973)
 
 [node name="Player_TD" type="CharacterBody2D"]
 scale = Vector2(2.92, 2.92)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_436xv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_q7aus")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, 3.08219)
-scale = Vector2(0.178082, 0.178082)
-texture = ExtResource("2_tcu1o")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.068494, 0.068494)
+texture = ExtResource("2_436xv")
+hframes = 6
+vframes = 6
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Bottom_Hit" type="Area2D" parent="."]
-position = Vector2(0, 24.6575)
+position = Vector2(0.684931, 25.3425)
 disable_mode = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom_Hit"]
@@ -41,6 +44,7 @@ scale = Vector2(1.08219, 1.08219)
 shape = SubResource("RectangleShape2D_tcu1o")
 
 [node name="Left_Hit" type="Area2D" parent="."]
+position = Vector2(0, -3.42466)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Left_Hit"]
 position = Vector2(23.6301, 1.0274)
@@ -48,6 +52,7 @@ scale = Vector2(1.20548, 1.39726)
 shape = SubResource("RectangleShape2D_5xpr2")
 
 [node name="Right_Hit" type="Area2D" parent="."]
+position = Vector2(0, -3.42466)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Right_Hit"]
 position = Vector2(-23.6301, 1.71233)

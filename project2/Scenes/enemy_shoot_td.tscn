@@ -16,3 +16,13 @@ texture = ExtResource("2_ao7l1")
 position = Vector2(2.08333, -37.5)
 scale = Vector2(7.16667, 7.16667)
 shape = SubResource("CapsuleShape2D_q7aus")
+
+[node name="Bullets" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="Canon" type="Node2D" parent="."]
+
+[node name="Canon_sprite" type="Sprite2D" parent="Canon"]
+position = Vector2(131.25, 16.6667)
+scale = Vector2(0.666668, 0.666668)
+texture = ExtResource("2_ao7l1")

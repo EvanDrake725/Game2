@@ -1,8 +1,9 @@
+class_name Player
 extends CharacterBody2D
 var speed=300
 var RunSpeed=350
 var facing=1
-var Group="alone"
+var Health=5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,12 +19,25 @@ func _process(delta: float) -> void:
 		self.velocity=dir*speed
 	if (Input.is_action_just_pressed("Hit")):
 		print("Hit")
-	if (Input.is_action_pressed("Jump")):
-		Group="partner"
+	if (Input.is_action_just_pressed("Heal")):
+		heal()
+	
 	move_and_slide()
 	pass
 	
+#func unused(event):
+		#TdController.Player_Pos=global_position
 
+func hurt():
+	Health-=1
+	if Health<=0:
+		self.queue_free()
+
+func heal():
+	if Health>=1:
+		if TdController.Gears_Collected>=1:
+			TdController.Loose_Gear()
+			Health+=1
 
 func _on_bottom_hit_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):
@@ -47,3 +61,6 @@ func _on_right_hit_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):
 		body.hit()
 	pass # Replace with function body.
+
+func get_type():
+	return "Player"

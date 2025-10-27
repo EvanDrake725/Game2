@@ -1,16 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://b764o84tsdtkh"]
+[gd_scene load_steps=13 format=3 uid="uid://b764o84tsdtkh"]
 
 [ext_resource type="PackedScene" uid="uid://wncwry54i1x1" path="res://Scenes/player_td.tscn" id="1_q7aus"]
 [ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="1_xa32j"]
 [ext_resource type="PackedScene" uid="uid://cb73sl7ydq0u2" path="res://Scenes/enemy_td.tscn" id="2_np2kr"]
-[ext_resource type="PackedScene" uid="uid://cp2qn003pxckj" path="res://Scenes/player_pf.tscn" id="3_np2kr"]
-[ext_resource type="Script" uid="uid://bhhej117bx2v7" path="res://Script/friend.gd" id="4_f6n6v"]
+[ext_resource type="PackedScene" uid="uid://kkdc1xmxnc11" path="res://Scenes/friend.tscn" id="4_122aq"]
 [ext_resource type="PackedScene" uid="uid://cposroppd8u56" path="res://Scenes/terminal.tscn" id="5_4jjlf"]
 [ext_resource type="PackedScene" uid="uid://bla7we54qf30q" path="res://Scenes/door.tscn" id="6_4jjlf"]
+[ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="7_03bqu"]
+[ext_resource type="PackedScene" uid="uid://pkf5mb1sekkc" path="res://Scenes/gear.tscn" id="8_m38gu"]
+[ext_resource type="Script" uid="uid://may340832gkm" path="res://garbage_pile.gd" id="10_66svm"]
+[ext_resource type="PackedScene" uid="uid://blip4s5syru31" path="res://Scenes/room_change.tscn" id="10_807ky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6n6v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vhavi"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_122aq"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,25 +29,13 @@ scale = Vector2(6.48, 6.48)
 shape = SubResource("RectangleShape2D_f6n6v")
 
 [node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("2_np2kr")]
-position = Vector2(175, 403)
+position = Vector2(110, 448)
 
 [node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("1_q7aus")]
 position = Vector2(343, 156)
 
-[node name="Friend" type="CharacterBody2D" parent="."]
+[node name="Friend" parent="." instance=ExtResource("4_122aq")]
 position = Vector2(422, 118)
-scale = Vector2(1.96, 1.96)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_f6n6v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Friend"]
-shape = SubResource("CircleShape2D_vhavi")
-
-[node name="Icon" type="Sprite2D" parent="Friend"]
-position = Vector2(-0.510204, -0.510201)
-scale = Vector2(0.183673, 0.183673)
-texture = ExtResource("1_xa32j")
 
 [node name="Terminal" parent="." instance=ExtResource("5_4jjlf")]
 position = Vector2(676, 106)
@@ -52,5 +43,30 @@ position = Vector2(676, 106)
 [node name="Door" parent="." instance=ExtResource("6_4jjlf")]
 position = Vector2(750, 263)
 
-[node name="Player_PF" parent="." instance=ExtResource("3_np2kr")]
-position = Vector2(457, 208)
+[node name="UI" parent="." instance=ExtResource("7_03bqu")]
+
+[node name="Gear" parent="." instance=ExtResource("8_m38gu")]
+position = Vector2(97, 160)
+
+[node name="Gear2" parent="." instance=ExtResource("8_m38gu")]
+position = Vector2(606, 258)
+
+[node name="RoomChange" parent="." instance=ExtResource("10_807ky")]
+position = Vector2(825, 422)
+Room_To_Change = "uid://c04wn80jv2lsd"
+
+[node name="Garbage_Pile" type="Area2D" parent="."]
+position = Vector2(510, 22)
+scale = Vector2(8.04, 8.04)
+script = ExtResource("10_66svm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garbage_Pile"]
+scale = Vector2(1.73736, 1.73736)
+shape = SubResource("CircleShape2D_122aq")
+
+[node name="Icon" type="Sprite2D" parent="Garbage_Pile"]
+position = Vector2(-0.248756, 0.124377)
+scale = Vector2(0.124378, 0.124378)
+texture = ExtResource("1_xa32j")
+
+[connection signal="body_entered" from="Garbage_Pile" to="Garbage_Pile" method="_on_body_entered"]

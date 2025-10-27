@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://c04wn80jv2lsd"]
+
+[ext_resource type="PackedScene" uid="uid://wncwry54i1x1" path="res://Scenes/player_td.tscn" id="1_umown"]
+[ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="2_y2wcx"]
+[ext_resource type="PackedScene" uid="uid://pkf5mb1sekkc" path="res://Scenes/gear.tscn" id="3_y2wcx"]
+[ext_resource type="PackedScene" uid="uid://blip4s5syru31" path="res://Scenes/room_change.tscn" id="4_ysj0k"]
+[ext_resource type="PackedScene" uid="uid://cb73sl7ydq0u2" path="res://Scenes/enemy_td.tscn" id="5_181f7"]
+[ext_resource type="PackedScene" uid="uid://bbh2lekjodwby" path="res://Scenes/enemy_shoot_td.tscn" id="6_scjtw"]
+
+[node name="P2Room2" type="Node2D"]
+
+[node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("1_umown")]
+position = Vector2(596, 327)
+
+[node name="UI" parent="." instance=ExtResource("2_y2wcx")]
+
+[node name="Gear" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(150, 157)
+
+[node name="RoomChange" parent="." instance=ExtResource("4_ysj0k")]
+position = Vector2(280, 333)
+Room_To_Change = "uid://b764o84tsdtkh"
+
+[node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("5_181f7")]
+position = Vector2(424, 166)
+
+[node name="Enemy_Shoot_TD" parent="." groups=["Enemies"] instance=ExtResource("6_scjtw")]
+position = Vector2(859, 130)

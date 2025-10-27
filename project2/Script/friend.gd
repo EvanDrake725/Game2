@@ -1,27 +1,26 @@
 extends CharacterBody2D
 
 var SPEED = 300.0
-var state="idle"
+var following=false
 
 
 func _physics_process(delta: float) -> void:
-	var Player_State=get_node("/root/Node2D/Player_TD")
 	var player_dir=get_tree().get_nodes_in_group("Player")[0].position-self.position
 	
 	if player_dir.length()>75:
-		state="follow"
+		following="follow"
 	if player_dir.length()<75:
-		state="idle"
+		following="idle"
 		
-	if (Player_State.Group=="partner"):
-		state="follow"
+	if (TdController.Group==true):
+		following="follow"
 	else:
-		state="idle"
+		following="idle"
 		
-	if (state=="follow"):
+	if (following=="follow"):
 		self.SPEED=300
 		self.velocity=player_dir.normalized()*SPEED
-	if (state=="idle"):
+	if (following=="idle"):
 		self.SPEED=0
 		self.velocity=player_dir.normalized()*SPEED
 		

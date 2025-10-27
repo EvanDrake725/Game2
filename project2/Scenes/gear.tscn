@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://pkf5mb1sekkc"]
+
+[ext_resource type="Script" uid="uid://b0cmue3ggdyw0" path="res://Script/gear.gd" id="1_7vd1c"]
+[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_1sowc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03bqu"]
+
+[node name="Gear" type="Area2D"]
+scale = Vector2(2.12, 2.12)
+script = ExtResource("1_7vd1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_03bqu")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.1211, 0.1211)
+texture = ExtResource("2_1sowc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
