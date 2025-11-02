@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://wncwry54i1x1"]
+[gd_scene load_steps=8 format=3 uid="uid://wncwry54i1x1"]
 
 [ext_resource type="Script" uid="uid://dilytulokg4k3" path="res://Script/player_td.gd" id="1_436xv"]
 [ext_resource type="SpriteFrames" uid="uid://pyr2hlw0urh6" path="res://Sprites/PF_Player_Sprites.tres" id="2_tcu1o"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="3_tcu1o"]
+[ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="3_5xpr2"]
 [ext_resource type="Script" uid="uid://ctimkbnplpkkn" path="res://Script/player_animator.gd" id="4_5xpr2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
 height = 23.9726
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0vh4"]
+atlas = ExtResource("3_5xpr2")
+region = Rect2(112.75, 20.0074, 520.172, 1359.28)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_436xv"]
+size = Vector2(20, 24.0861)
 
 [node name="Player_TD" type="CharacterBody2D"]
 scale = Vector2(2.92, 2.92)
@@ -36,14 +41,14 @@ zoom = Vector2(1.25, 1.25)
 [node name="Sword" type="Area2D" parent="Sword_Center"]
 rotation = -1.58847
 
-[node name="Icon" type="Sprite2D" parent="Sword_Center/Sword"]
-position = Vector2(29.6283, 0.780861)
+[node name="Sprite2D" type="Sprite2D" parent="Sword_Center/Sword"]
+position = Vector2(26.0112, 1.1448)
 rotation = -1.5708
-scale = Vector2(0.0821904, 0.178083)
-texture = ExtResource("3_tcu1o")
+scale = Vector2(0.025, 0.025)
+texture = SubResource("AtlasTexture_i0vh4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword_Center/Sword"]
-position = Vector2(29.7838, 0.869034)
+position = Vector2(31.8443, 0.562865)
 rotation = -1.5708
 scale = Vector2(0.482105, 0.77873)
 shape = SubResource("RectangleShape2D_436xv")

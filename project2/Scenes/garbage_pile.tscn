@@ -1,9 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfltky6iifsxg"]
+[gd_scene load_steps=10 format=3 uid="uid://cfltky6iifsxg"]
 
 [ext_resource type="Script" uid="uid://may340832gkm" path="res://Script/garbage_pile.gd" id="1_xouhs"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_o7333"]
+[ext_resource type="Script" uid="uid://bpyykb0jh3h5w" path="res://Scenes/garbage_animator.gd" id="2_o7333"]
+[ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="2_xouhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_122aq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7333"]
+atlas = ExtResource("2_xouhs")
+region = Rect2(0, 1638, 1024, 546)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfnn2"]
+atlas = ExtResource("2_xouhs")
+region = Rect2(0, 2184, 1024, 546)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j33xw"]
+atlas = ExtResource("2_xouhs")
+region = Rect2(1024, 1638, 1024, 546)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0br54"]
+atlas = ExtResource("2_xouhs")
+region = Rect2(1024, 2184, 1024, 546)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s4f7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7333")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfnn2")
+}],
+"loop": true,
+"name": &"Post",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j33xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0br54")
+}],
+"loop": true,
+"name": &"Pre",
+"speed": 5.0
+}]
 
 [node name="Garbage_Pile" type="Area2D"]
 scale = Vector2(8.04, 8.04)
@@ -13,10 +55,17 @@ script = ExtResource("1_xouhs")
 scale = Vector2(1.73736, 1.73736)
 shape = SubResource("CircleShape2D_122aq")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-0.248756, 0.124377)
-scale = Vector2(0.124378, 0.124378)
-texture = ExtResource("2_o7333")
+[node name="Animator" type="Node2D" parent="." node_paths=PackedStringArray("animated_sprite")]
+scale = Vector2(1, 1)
+script = ExtResource("2_o7333")
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animator"]
+scale = Vector2(0.0447762, 0.0447762)
+sprite_frames = SubResource("SpriteFrames_s4f7s")
+animation = &"Pre"
+autoplay = "Pre"
+frame_progress = 0.179976
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
