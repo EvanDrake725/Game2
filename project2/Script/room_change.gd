@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file(Room_To_Change)
-	TdController.First_Load=Direction
+	if body.name=="Player_TD":
+		get_tree().change_scene_to_file(Room_To_Change)
+		TdController.First_Load=Direction
 	pass # Replace with function body.

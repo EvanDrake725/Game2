@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkpvpgiypd8n8"]
+
+[ext_resource type="Texture2D" uid="uid://nq6t2pxtrpal" path="res://Sprites/TEE_screens.png" id="1_mjckp"]
+[ext_resource type="Script" uid="uid://b8n3pkp1pliv0" path="res://Script/stroy_start.gd" id="2_qlwg2"]
+[ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="3_onjka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxhva"]
+atlas = ExtResource("1_mjckp")
+region = Rect2(0, 0, 2048, 969.438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12xg2"]
+atlas = ExtResource("3_onjka")
+region = Rect2(1530.25, 1708.56, 482.625, 283.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvkj7"]
+
+[node name="StoryScreen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-0.500015, 1.50002)
+scale = Vector2(0.665527, 0.791538)
+texture = SubResource("AtlasTexture_fxhva")
+
+[node name="Stroy_Start" type="Area2D" parent="."]
+position = Vector2(-173, 326)
+scale = Vector2(12.4696, 5.26597)
+script = ExtResource("2_qlwg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stroy_Start"]
+scale = Vector2(0.0423977, 0.0888163)
+texture = SubResource("AtlasTexture_12xg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stroy_Start"]
+shape = SubResource("RectangleShape2D_vvkj7")
+
+[connection signal="input_event" from="Stroy_Start" to="Stroy_Start" method="_on_input_event"]

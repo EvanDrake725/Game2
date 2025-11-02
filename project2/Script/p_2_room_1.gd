@@ -20,7 +20,6 @@ func _ready() -> void:
 		$Player_TD.position.x=-88
 		$Player_TD.position.y=-249
 	$Friend.position=$Player_TD.position
-		
 	if TdController.Locks_Done>=1:
 		$Door2.queue_free()
 	if TdController.Locks_Done>=2:

@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	if used==true and Input.is_action_just_pressed("Interact"):
 		TdController.Follower()
 		TdController.Garbage_Used=true
+		$Friend_Got_Screen.show()
 	pass
 
 
@@ -21,4 +22,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	used=false
+	$Friend_Got_Screen.hide()
 	pass # Replace with function body.

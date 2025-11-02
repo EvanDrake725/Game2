@@ -3,8 +3,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if TdController.First_Load=="forward":
-		$Player_TD.position.x=-56
-		$Player_TD.position.y=2110
+		$Player_TD.position.x=-64
+		$Player_TD.position.y=2107
 		
 	elif TdController.First_Load=="platform":
 		$Player_TD.position.x=78

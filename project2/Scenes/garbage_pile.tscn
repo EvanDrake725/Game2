@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfltky6iifsxg"]
+[gd_scene load_steps=12 format=3 uid="uid://cfltky6iifsxg"]
 
 [ext_resource type="Script" uid="uid://may340832gkm" path="res://Script/garbage_pile.gd" id="1_xouhs"]
 [ext_resource type="Script" uid="uid://bpyykb0jh3h5w" path="res://Script/garbage_animator.gd" id="2_o7333"]
 [ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="2_xouhs"]
+[ext_resource type="Texture2D" uid="uid://dhpocand4rjpd" path="res://Sprites/enemy_assets.png" id="4_vfnn2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_122aq"]
 
@@ -47,6 +48,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4f7s"]
+atlas = ExtResource("4_vfnn2")
+region = Rect2(106, 476.688, 914.625, 897.75)
+
 [node name="Garbage_Pile" type="Area2D"]
 scale = Vector2(8.04, 8.04)
 script = ExtResource("1_xouhs")
@@ -56,7 +61,6 @@ scale = Vector2(1.73736, 1.73736)
 shape = SubResource("CircleShape2D_122aq")
 
 [node name="Animator" type="Node2D" parent="." node_paths=PackedStringArray("animated_sprite")]
-scale = Vector2(1, 1)
 script = ExtResource("2_o7333")
 animated_sprite = NodePath("AnimatedSprite2D")
 
@@ -66,6 +70,12 @@ sprite_frames = SubResource("SpriteFrames_s4f7s")
 animation = &"Pre"
 autoplay = "Pre"
 frame_progress = 0.179976
+
+[node name="Friend_Got_Screen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-16.6667, 2.8607)
+scale = Vector2(0.106268, 0.106268)
+texture = SubResource("AtlasTexture_s4f7s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

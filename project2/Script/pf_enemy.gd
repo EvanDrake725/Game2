@@ -23,5 +23,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="Player_PF":
-		body.queue_free()
+		body.Alive=false
 	pass # Replace with function body.

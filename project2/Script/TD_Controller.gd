@@ -19,6 +19,9 @@ func Loose_Gear():
 func Health_Loss():
 	Health-=1
 	Health_Change.emit()
+	if Health<=0:
+		Health=0
+		Health_Change.emit()
 	
 func Health_Gain():
 	Health+=1

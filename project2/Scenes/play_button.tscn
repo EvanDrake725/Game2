@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://biroybdxxqsov"]
+
+[ext_resource type="Script" uid="uid://bg8heqn6a3h03" path="res://Script/play_button.gd" id="1_c1ckd"]
+[ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="2_1ynqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwdr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blcid"]
+atlas = ExtResource("2_1ynqo")
+region = Rect2(1459.38, 2066.31, 563.625, 300.375)
+
+[node name="PlayButton" type="Area2D"]
+scale = Vector2(1.44, 1.44)
+script = ExtResource("1_c1ckd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(10.64, 5.32)
+shape = SubResource("RectangleShape2D_cwdr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.359998, 0.359998)
+texture = SubResource("AtlasTexture_blcid")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
