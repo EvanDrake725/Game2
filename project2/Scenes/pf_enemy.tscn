@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://5wstyevr16q4"]
+
+[ext_resource type="Script" uid="uid://dtk17bvjanls3" path="res://Script/pf_enemy.gd" id="1_74u5g"]
+[ext_resource type="Texture2D" uid="uid://cdeencl58gx4m" path="res://Sprites/game2.png" id="2_ymnls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbws0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6okh7"]
+atlas = ExtResource("2_ymnls")
+region = Rect2(32.1479, 0.851852, 16.5926, 15.7037)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6okh7"]
+
+[node name="PF_Enemy" type="CharacterBody2D"]
+scale = Vector2(1.68, 1.68)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_74u5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pbws0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.490196, 0.980385)
+scale = Vector2(1.33333, 1.33333)
+texture = SubResource("AtlasTexture_6okh7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.19608, 1.19608)
+shape = SubResource("CircleShape2D_6okh7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -8,4 +8,5 @@ script = ExtResource("1_jxero")
 [node name="Gears" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+scale = Vector2(3.04, 3.04)
 text = "0"

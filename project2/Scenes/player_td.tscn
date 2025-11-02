@@ -1,16 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://wncwry54i1x1"]
 
 [ext_resource type="Script" uid="uid://dilytulokg4k3" path="res://Script/player_td.gd" id="1_436xv"]
-[ext_resource type="Texture2D" uid="uid://c7y1aot7w1m2e" path="res://Sprites/PlayergameSprite.png" id="2_436xv"]
+[ext_resource type="SpriteFrames" uid="uid://pyr2hlw0urh6" path="res://Sprites/PF_Player_Sprites.tres" id="2_tcu1o"]
+[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="3_tcu1o"]
+[ext_resource type="Script" uid="uid://ctimkbnplpkkn" path="res://Script/player_animator.gd" id="4_5xpr2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_436xv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcu1o"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xpr2"]
-size = Vector2(20, 18.7973)
 
 [node name="Player_TD" type="CharacterBody2D"]
 scale = Vector2(2.92, 2.92)
@@ -21,45 +18,36 @@ script = ExtResource("1_436xv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_q7aus")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.39726, 0.684932)
 scale = Vector2(0.068494, 0.068494)
-texture = ExtResource("2_436xv")
-hframes = 6
-vframes = 6
+sprite_frames = ExtResource("2_tcu1o")
+animation = &"Forward"
+autoplay = "Default"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.602739, 0.602739)
+zoom = Vector2(1.25, 1.25)
 
-[node name="Bottom_Hit" type="Area2D" parent="."]
-position = Vector2(0.684931, 25.3425)
-disable_mode = 2
+[node name="Sword_Center" type="Node2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom_Hit"]
+[node name="Sword" type="Area2D" parent="Sword_Center"]
+rotation = -1.58847
+
+[node name="Icon" type="Sprite2D" parent="Sword_Center/Sword"]
+position = Vector2(29.6283, 0.780861)
+rotation = -1.5708
+scale = Vector2(0.0821904, 0.178083)
+texture = ExtResource("3_tcu1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword_Center/Sword"]
+position = Vector2(29.7838, 0.869034)
+rotation = -1.5708
+scale = Vector2(0.482105, 0.77873)
 shape = SubResource("RectangleShape2D_436xv")
 
-[node name="Top_Hit" type="Area2D" parent="."]
+[node name="Animator" type="Node2D" parent="." node_paths=PackedStringArray("Animated_Sprite")]
+script = ExtResource("4_5xpr2")
+Animated_Sprite = NodePath("../Sprite2D")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Top_Hit"]
-position = Vector2(-0.684931, -27.3973)
-scale = Vector2(1.08219, 1.08219)
-shape = SubResource("RectangleShape2D_tcu1o")
-
-[node name="Left_Hit" type="Area2D" parent="."]
-position = Vector2(0, -3.42466)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Left_Hit"]
-position = Vector2(23.6301, 1.0274)
-scale = Vector2(1.20548, 1.39726)
-shape = SubResource("RectangleShape2D_5xpr2")
-
-[node name="Right_Hit" type="Area2D" parent="."]
-position = Vector2(0, -3.42466)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Right_Hit"]
-position = Vector2(-23.6301, 1.71233)
-scale = Vector2(1.20661, 1.55714)
-shape = SubResource("RectangleShape2D_5xpr2")
-
-[connection signal="body_entered" from="Bottom_Hit" to="." method="_on_bottom_hit_body_entered"]
-[connection signal="body_entered" from="Top_Hit" to="." method="_on_top_hit_body_entered"]
-[connection signal="body_entered" from="Left_Hit" to="." method="_on_left_hit_body_entered"]
-[connection signal="body_entered" from="Right_Hit" to="." method="_on_right_hit_body_entered"]
+[connection signal="body_entered" from="Sword_Center/Sword" to="." method="_on_sword_body_entered"]

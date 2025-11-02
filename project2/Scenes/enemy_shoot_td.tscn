@@ -18,7 +18,6 @@ scale = Vector2(7.16667, 7.16667)
 shape = SubResource("CapsuleShape2D_q7aus")
 
 [node name="Bullets" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Canon" type="Node2D" parent="."]
 

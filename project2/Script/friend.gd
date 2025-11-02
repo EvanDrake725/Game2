@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 var SPEED = 300.0
 var following=false
-
+var player_td=preload("res://Scenes/player_td.tscn")
 
 func _physics_process(delta: float) -> void:
 	var player_dir=get_tree().get_nodes_in_group("Player")[0].position-self.position
-	
+	$AnimatedSprite2D.play("default")
 	if player_dir.length()>75:
 		following="follow"
 	if player_dir.length()<75:
@@ -14,7 +14,9 @@ func _physics_process(delta: float) -> void:
 		
 	if (TdController.Group==true):
 		following="follow"
+		self.show()
 	else:
+		self.hide()
 		following="idle"
 		
 	if (following=="follow"):

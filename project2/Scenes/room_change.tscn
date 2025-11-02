@@ -7,6 +7,8 @@
 
 [node name="RoomChange" type="Area2D"]
 scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_d0svy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,3 +18,5 @@ shape = SubResource("RectangleShape2D_m38gu")
 position = Vector2(-0.75, -0.75)
 scale = Vector2(0.16327, 0.16327)
 texture = ExtResource("2_oxh17")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

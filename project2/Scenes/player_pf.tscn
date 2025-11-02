@@ -1,20 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://cp2qn003pxckj"]
 
 [ext_resource type="Script" uid="uid://bn4aee4o7uofy" path="res://Script/player_pf.gd" id="1_vwuyn"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_e5bjy"]
+[ext_resource type="SpriteFrames" uid="uid://pyr2hlw0urh6" path="res://Sprites/PF_Player_Sprites.tres" id="2_vwuyn"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhavi"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5bjy"]
 
 [node name="Player_PF" type="CharacterBody2D"]
 script = ExtResource("1_vwuyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.28, 3.28)
-shape = SubResource("CapsuleShape2D_vhavi")
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(3.57628e-07, 26)
-scale = Vector2(0.440001, 0.440001)
-texture = ExtResource("2_e5bjy")
+shape = SubResource("CircleShape2D_e5bjy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -55)
+zoom = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(3.93154, 3.93154)
+sprite_frames = ExtResource("2_vwuyn")
+animation = &"Base"
+autoplay = "Base"
+frame = 1
+frame_progress = 0.0324526

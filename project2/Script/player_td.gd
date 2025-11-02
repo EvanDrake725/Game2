@@ -2,9 +2,7 @@ class_name Player
 extends CharacterBody2D
 var speed=300
 var RunSpeed=350
-var facing=1
 var Health=5
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,15 +16,17 @@ func _process(delta: float) -> void:
 	else:
 		self.velocity=dir*speed
 	if (Input.is_action_just_pressed("Hit")):
-		print("Hit")
+		print("hit")
+		
 	if (Input.is_action_just_pressed("Heal")):
 		heal()
-	
+	$Sword_Center/Sword.look_at(get_global_mouse_position())
 	move_and_slide()
+	
 	pass
 	
-#func unused(event):
-		#TdController.Player_Pos=global_position
+func unused(event):
+		TdController.Player_Pos=global_position
 
 func hurt():
 	Health-=1
@@ -39,28 +39,12 @@ func heal():
 			TdController.Loose_Gear()
 			Health+=1
 
-func _on_bottom_hit_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemies"):
-		body.hit()
-	pass # Replace with function body.
-
-
-func _on_top_hit_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemies"):
-		body.hit()
-	pass # Replace with function body.
-
-
-func _on_left_hit_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemies"):
-		body.hit()
-	pass # Replace with function body.
-
-
-func _on_right_hit_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemies"):
-		body.hit()
-	pass # Replace with function body.
 
 func get_type():
 	return "Player"
+
+
+func _on_sword_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemies"):
+		body.hit()
+	pass # Replace with function body.

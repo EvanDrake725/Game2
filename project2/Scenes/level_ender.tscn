@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://17qac0yc6dcs"]
+
+[ext_resource type="Script" uid="uid://dh5buw0fo8dy7" path="res://Script/level_ender.gd" id="1_i7bjq"]
+[ext_resource type="Texture2D" uid="uid://cdeencl58gx4m" path="res://Sprites/game2.png" id="2_10oo1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6okh7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjlr5"]
+atlas = ExtResource("2_10oo1")
+region = Rect2(0, 96.0743, 16.7405, 15.5555)
+
+[node name="Level_Ender" type="Area2D"]
+script = ExtResource("1_i7bjq")
+Level_To = "uid://b764o84tsdtkh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.68002, 1.68002)
+shape = SubResource("RectangleShape2D_6okh7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.04004, 2.04004)
+texture = SubResource("AtlasTexture_xjlr5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

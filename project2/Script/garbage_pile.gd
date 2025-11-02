@@ -8,9 +8,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if used==true and Input.is_action_just_pressed("Interact"):
+		TdController.Follower()
 	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
-	TdController.Follower()
+	used=true
+	pass # Replace with function body.
+
+
+func _on_body_exited(body: Node2D) -> void:
+	used=false
 	pass # Replace with function body.

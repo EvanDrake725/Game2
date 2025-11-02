@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfltky6iifsxg"]
+
+[ext_resource type="Script" uid="uid://may340832gkm" path="res://Script/garbage_pile.gd" id="1_xouhs"]
+[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_o7333"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_122aq"]
+
+[node name="Garbage_Pile" type="Area2D"]
+scale = Vector2(8.04, 8.04)
+script = ExtResource("1_xouhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.73736, 1.73736)
+shape = SubResource("CircleShape2D_122aq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-0.248756, 0.124377)
+scale = Vector2(0.124378, 0.124378)
+texture = ExtResource("2_o7333")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

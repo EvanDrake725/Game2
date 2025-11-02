@@ -2,8 +2,9 @@ extends Node
 var Gears_Collected=0
 signal Gear_Collected
 var Group=false
+var Locks_Done=0
 
-#var Player_Pos:Vector2
+var First_Load="forward"
 
 func Collect_Gears():
 	Gears_Collected+=1
