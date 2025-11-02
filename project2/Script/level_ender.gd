@@ -5,6 +5,8 @@ var Direction="platform"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="Player_PF":
+		TransitionLayer.transition()
+		await TransitionLayer.on_trans_fin
 		get_tree().change_scene_to_file(Level_To)
 		TdController.First_Load=Direction
 		TdController.Locks_Done=Locks_Complete
