@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1uesmuqif3j0"]
+[gd_scene load_steps=7 format=3 uid="uid://1uesmuqif3j0"]
 
 [ext_resource type="Script" uid="uid://consbage7nr70" path="res://Script/p_2_room_5.gd" id="1_cbnro"]
 [ext_resource type="PackedScene" uid="uid://blip4s5syru31" path="res://Scenes/room_change.tscn" id="2_hlos1"]
 [ext_resource type="TileSet" uid="uid://cljk4gpbyvkj1" path="res://Sprites/Project2_TS1.tres" id="2_qwc8m"]
 [ext_resource type="PackedScene" uid="uid://wncwry54i1x1" path="res://Scenes/player_td.tscn" id="3_hlos1"]
 [ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="4_3gita"]
+[ext_resource type="PackedScene" uid="uid://kkdc1xmxnc11" path="res://Scenes/friend.tscn" id="6_p0np5"]
 
 [node name="P2Room5" type="Node2D"]
 script = ExtResource("1_cbnro")
@@ -29,3 +30,6 @@ Direction = "forward"
 position = Vector2(458, -39)
 
 [node name="UI" parent="." instance=ExtResource("4_3gita")]
+
+[node name="Friend" parent="." instance=ExtResource("6_p0np5")]
+position = Vector2(327, -36)

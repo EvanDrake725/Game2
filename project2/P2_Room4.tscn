@@ -32,4 +32,4 @@ Direction = "back"
 [node name="UI" parent="." instance=ExtResource("4_ierg2")]
 
 [node name="Friend" parent="." instance=ExtResource("6_mk8fr")]
-position = Vector2(2644, 312)
+position = Vector2(1606, 295)

@@ -13,6 +13,10 @@ func _ready() -> void:
 	else:
 		$Player_TD.position.x=-104
 		$Player_TD.position.y=63
+	if TdController.Garbage_Used==true:
+		$Friend.position=$Player_TD.position
+	else:
+		$Friend.position=$Garbage_Pile.position
 	if TdController.Locks_Done>=1:
 		$Door.queue_free()
 	pass # Replace with function body.

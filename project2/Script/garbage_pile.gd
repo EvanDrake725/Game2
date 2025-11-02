@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if used==true and Input.is_action_just_pressed("Interact"):
 		TdController.Follower()
+		TdController.Garbage_Used=true
 	pass
 
 

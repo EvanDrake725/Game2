@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1mbf4iataplo"]
+[gd_scene load_steps=9 format=3 uid="uid://c1mbf4iataplo"]
 
 [ext_resource type="Script" uid="uid://dpbnya8x007x8" path="res://Script/p_2_room_6.gd" id="1_rs3xk"]
 [ext_resource type="TileSet" uid="uid://cljk4gpbyvkj1" path="res://Sprites/Project2_TS1.tres" id="2_pjn3p"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="4_pf2vy"]
 [ext_resource type="PackedScene" uid="uid://cposroppd8u56" path="res://Scenes/terminal.tscn" id="6_bg71u"]
 [ext_resource type="PackedScene" uid="uid://bla7we54qf30q" path="res://Scenes/door.tscn" id="7_unc1f"]
+[ext_resource type="PackedScene" uid="uid://kkdc1xmxnc11" path="res://Scenes/friend.tscn" id="8_unc1f"]
 
 [node name="P2Room6" type="Node2D"]
 script = ExtResource("1_rs3xk")
@@ -39,3 +40,6 @@ position = Vector2(1371, 133)
 [node name="Door" parent="." instance=ExtResource("7_unc1f")]
 position = Vector2(1449, 40)
 scale = Vector2(0.51999, 0.200001)
+
+[node name="Friend" parent="." instance=ExtResource("8_unc1f")]
+position = Vector2(1558, 2110)

@@ -3,7 +3,7 @@ var Gears_Collected=0
 signal Gear_Collected
 var Group=false
 var Locks_Done=0
-
+var Garbage_Used=false
 var First_Load="forward"
 
 func Collect_Gears():

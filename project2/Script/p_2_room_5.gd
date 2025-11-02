@@ -8,6 +8,7 @@ func _ready() -> void:
 	else:
 		$Player_TD.position.x=458
 		$Player_TD.position.y=-39
+	$Friend.position=$Player_TD.position
 	pass # Replace with function body.
 
 func close():
