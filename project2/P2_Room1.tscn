@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://wncwry54i1x1" path="res://Scenes/player_td.tscn" id="1_q7aus"]
 [ext_resource type="PackedScene" uid="uid://cb73sl7ydq0u2" path="res://Scenes/enemy_td.tscn" id="2_np2kr"]
 [ext_resource type="PackedScene" uid="uid://kkdc1xmxnc11" path="res://Scenes/friend.tscn" id="4_122aq"]
-[ext_resource type="PackedScene" uid="uid://cposroppd8u56" path="res://Scenes/terminal.tscn" id="5_4jjlf"]
 [ext_resource type="PackedScene" uid="uid://bla7we54qf30q" path="res://Scenes/door.tscn" id="6_4jjlf"]
 [ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="7_03bqu"]
 [ext_resource type="PackedScene" uid="uid://pkf5mb1sekkc" path="res://Scenes/gear.tscn" id="8_m38gu"]
+[ext_resource type="PackedScene" uid="uid://djjgduq3pvylu" path="res://Scenes/friend_terminal.tscn" id="10_66svm"]
 [ext_resource type="PackedScene" uid="uid://blip4s5syru31" path="res://Scenes/room_change.tscn" id="10_807ky"]
 
 [node name="P2Room1" type="Node2D"]
@@ -24,10 +24,6 @@ position = Vector2(110, 448)
 
 [node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("1_q7aus")]
 position = Vector2(-87, -249)
-
-[node name="Terminal" parent="." instance=ExtResource("5_4jjlf")]
-position = Vector2(-172, -167)
-PlatformLevel = "uid://by3oxta2kt6ly"
 
 [node name="Door" parent="." instance=ExtResource("6_4jjlf")]
 position = Vector2(-88, -245)
@@ -64,4 +60,10 @@ Direction = "back"
 
 [node name="Door2" parent="." instance=ExtResource("6_4jjlf")]
 position = Vector2(928, -119)
-scale = Vector2(0.374344, 0.537992)
+rotation = 1.57446
+scale = Vector2(0.494344, 0.537992)
+
+[node name="Terminal" parent="." instance=ExtResource("10_66svm")]
+position = Vector2(-161, -181)
+scale = Vector2(0.44, 0.44)
+PlatformLevel = "uid://bu2eup57yenbg"

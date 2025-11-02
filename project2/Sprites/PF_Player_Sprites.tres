@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://pyr2hlw0urh6"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://pyr2hlw0urh6"]
 
 [ext_resource type="Texture2D" uid="uid://cdeencl58gx4m" path="res://Sprites/game2.png" id="1_4j3y8"]
 [ext_resource type="Texture2D" uid="uid://c7y1aot7w1m2e" path="res://Sprites/PlayergameSprite.png" id="2_5ayju"]
@@ -31,6 +31,10 @@ region = Rect2(818, 0, 409, 455)
 atlas = ExtResource("2_5ayju")
 region = Rect2(1227, 0, 409, 455)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_58uhl"]
+atlas = ExtResource("2_5ayju")
+region = Rect2(409, 2275, 409, 455)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwiof"]
 atlas = ExtResource("2_5ayju")
 region = Rect2(0, 1365, 409, 455)
@@ -46,6 +50,10 @@ region = Rect2(818, 1365, 409, 455)
 [sub_resource type="AtlasTexture" id="AtlasTexture_eipqc"]
 atlas = ExtResource("2_5ayju")
 region = Rect2(1227, 1365, 409, 455)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvvud"]
+atlas = ExtResource("2_5ayju")
+region = Rect2(0, 2275, 409, 455)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6tvx"]
 atlas = ExtResource("2_5ayju")
@@ -119,6 +127,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_58uhl")
+}],
+"loop": true,
+"name": &"Hacked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rwiof")
 }, {
 "duration": 1.0,
@@ -133,6 +149,14 @@ animations = [{
 "loop": true,
 "name": &"Left",
 "speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvvud")
+}],
+"loop": true,
+"name": &"Normal_Terminal",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

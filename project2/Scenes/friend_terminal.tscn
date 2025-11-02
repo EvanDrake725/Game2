@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djjgduq3pvylu"]
 
 [ext_resource type="Script" uid="uid://lulfag2pu5ub" path="res://Script/terminal.gd" id="1_pblg8"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_bdmur"]
+[ext_resource type="SpriteFrames" uid="uid://pyr2hlw0urh6" path="res://Sprites/PF_Player_Sprites.tres" id="3_51a5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhavi"]
 
@@ -10,13 +10,14 @@ scale = Vector2(0.599999, 0.599999)
 script = ExtResource("1_pblg8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(-5.92448, 9.27263)
+scale = Vector2(-5.92448, 8.3393)
 shape = SubResource("RectangleShape2D_vhavi")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-2.14577e-06, -58.3334)
-scale = Vector2(0.799998, 0.799998)
-texture = ExtResource("2_bdmur")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.333335, 0.333335)
+sprite_frames = ExtResource("3_51a5j")
+animation = &"Normal_Terminal"
+autoplay = "Normal_Terminal"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

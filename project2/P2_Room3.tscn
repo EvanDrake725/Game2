@@ -31,8 +31,9 @@ Room_To_Change = "uid://74esfc8fem8g"
 Direction = "forward"
 
 [node name="Door" parent="." instance=ExtResource("4_utxi1")]
-position = Vector2(-5, 55)
-scale = Vector2(0.312002, 0.500792)
+position = Vector2(-13, 55)
+rotation = -1.56907
+scale = Vector2(0.47207, 0.500792)
 
 [node name="Garbage_Pile" parent="." instance=ExtResource("5_1hj3t")]
 position = Vector2(1041, 783)
@@ -45,7 +46,8 @@ position = Vector2(-101, 881)
 position = Vector2(-104, 54)
 
 [node name="Terminal" parent="." instance=ExtResource("6_h84ti")]
-position = Vector2(77, 60)
+position = Vector2(69, 24)
+scale = Vector2(0.439998, 0.439998)
 PlatformLevel = "uid://by3oxta2kt6ly"
 
 [node name="UI" parent="." instance=ExtResource("8_h84ti")]
