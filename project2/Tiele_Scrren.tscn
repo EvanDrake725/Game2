@@ -29,7 +29,6 @@ texture = SubResource("AtlasTexture_ioxyl")
 
 [node name="PlayButton" parent="." instance=ExtResource("2_mi1hx")]
 position = Vector2(981, 343)
-scale = Vector2(1.44, 1.44)
 
 [node name="Story_Button" type="Area2D" parent="."]
 position = Vector2(992, 470)
