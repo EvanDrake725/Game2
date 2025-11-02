@@ -1,27 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbh2lekjodwby"]
+[gd_scene load_steps=6 format=3 uid="uid://bbh2lekjodwby"]
 
 [ext_resource type="Script" uid="uid://b30gnw2uf8ayx" path="res://Script/enemy_shoot_td.gd" id="1_m623f"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_ao7l1"]
+[ext_resource type="Texture2D" uid="uid://dhpocand4rjpd" path="res://Sprites/enemy_assets.png" id="2_m623f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao7l1"]
+atlas = ExtResource("2_m623f")
+region = Rect2(1219.75, 44.688, 668.25, 1066.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70mlm"]
+atlas = ExtResource("2_m623f")
+region = Rect2(507.625, 24.438, 276.75, 435.375)
 
 [node name="Enemy_Shoot_TD" type="CharacterBody2D"]
 scale = Vector2(0.48, 0.48)
 script = ExtResource("1_m623f")
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_ao7l1")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08333, -37.5)
-scale = Vector2(7.16667, 7.16667)
+scale = Vector2(8.41667, 8.41667)
 shape = SubResource("CapsuleShape2D_q7aus")
 
 [node name="Bullets" type="Node2D" parent="."]
 
-[node name="Canon" type="Node2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.25, -31.25)
+scale = Vector2(0.250007, 0.250007)
+texture = SubResource("AtlasTexture_ao7l1")
 
-[node name="Canon_sprite" type="Sprite2D" parent="Canon"]
-position = Vector2(131.25, 16.6667)
-scale = Vector2(0.666668, 0.666668)
-texture = ExtResource("2_ao7l1")
+[node name="Canon" type="Node2D" parent="."]
+position = Vector2(-41.6667, -81.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Canon"]
+position = Vector2(66.6667, 4.16667)
+rotation = 1.57764
+scale = Vector2(0.347995, 0.347995)
+texture = SubResource("AtlasTexture_70mlm")

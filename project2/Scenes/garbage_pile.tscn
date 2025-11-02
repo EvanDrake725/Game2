@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cfltky6iifsxg"]
 
 [ext_resource type="Script" uid="uid://may340832gkm" path="res://Script/garbage_pile.gd" id="1_xouhs"]
-[ext_resource type="Script" uid="uid://bpyykb0jh3h5w" path="res://Scenes/garbage_animator.gd" id="2_o7333"]
+[ext_resource type="Script" uid="uid://bpyykb0jh3h5w" path="res://Script/garbage_animator.gd" id="2_o7333"]
 [ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="2_xouhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_122aq"]

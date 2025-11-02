@@ -1,18 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb73sl7ydq0u2"]
+[gd_scene load_steps=9 format=3 uid="uid://cb73sl7ydq0u2"]
 
 [ext_resource type="Script" uid="uid://bwlux3xmcl6hs" path="res://Script/enemy_td.gd" id="1_w7r8w"]
-[ext_resource type="Texture2D" uid="uid://bu5b5yfu1bejp" path="res://icon.svg" id="2_emwm6"]
+[ext_resource type="Texture2D" uid="uid://dhpocand4rjpd" path="res://Sprites/enemy_assets.png" id="2_w7r8w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emwm6"]
+atlas = ExtResource("2_w7r8w")
+region = Rect2(0, 1366, 1024, 1366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llho1"]
+atlas = ExtResource("2_w7r8w")
+region = Rect2(1024, 1366, 1024, 1366)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tryv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emwm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llho1")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 4.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7r8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7r8w"]
+atlas = ExtResource("2_w7r8w")
+region = Rect2(829.5, 74.75, 243, 411.75)
 
 [node name="Enemy_TD" type="CharacterBody2D"]
 scale = Vector2(0.48, 0.48)
 script = ExtResource("1_w7r8w")
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_emwm6")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08333, -37.5)
 scale = Vector2(7.16667, 7.16667)
 shape = SubResource("CapsuleShape2D_q7aus")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.08333, -31.25)
+scale = Vector2(0.16667, 0.16667)
+sprite_frames = SubResource("SpriteFrames_3tryv")
+animation = &"Run"
+autoplay = "Run"
+frame_progress = 0.919414
+
+[node name="AttackBox" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="AttackBox"]
+position = Vector2(120.833, -33.3333)
+rotation = -1.60234
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox/Area2D"]
+scale = Vector2(3.83333, 3.83333)
+shape = SubResource("CircleShape2D_w7r8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="AttackBox/Area2D"]
+rotation = 3.12852
+scale = Vector2(0.249999, 0.249999)
+texture = SubResource("AtlasTexture_w7r8w")
+
+[connection signal="body_entered" from="AttackBox/Area2D" to="." method="_on_area_2d_body_entered"]
