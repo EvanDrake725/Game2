@@ -64,10 +64,6 @@ position = Vector2(589, 1368)
 scale = Vector2(0.200004, 0.200004)
 texture = SubResource("AtlasTexture_ntagj")
 
-[node name="Garbage_Pile" parent="." instance=ExtResource("5_1hj3t")]
-position = Vector2(1041, 783)
-scale = Vector2(5.12, 5.12)
-
 [node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("12_w60fq")]
 position = Vector2(139, 1913)
 
@@ -103,3 +99,7 @@ position = Vector2(904, 786)
 
 [node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("3_703c3")]
 position = Vector2(-64, 2107)
+
+[node name="Garbage_Pile" parent="." instance=ExtResource("5_1hj3t")]
+position = Vector2(1041, 783)
+scale = Vector2(5.12, 5.12)
