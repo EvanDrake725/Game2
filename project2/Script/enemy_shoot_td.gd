@@ -42,7 +42,4 @@ func fire():
 func hit():
 	Health-=1
 	if Health<=0:
-		var new_Gear=gear_Scene.instantiate()
-		get_node("/root").add_child(new_Gear)
-		new_Gear.position=self.position
 		self.queue_free()

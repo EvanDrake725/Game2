@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1mbf4iataplo"]
+[gd_scene load_steps=20 format=3 uid="uid://c1mbf4iataplo"]
 
 [ext_resource type="Script" uid="uid://dpbnya8x007x8" path="res://Script/p_2_room_6.gd" id="1_rs3xk"]
 [ext_resource type="TileSet" uid="uid://cv782py16sv2w" path="res://Sprites/BackGround.tres" id="2_pj1e0"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://djjgduq3pvylu" path="res://Scenes/friend_terminal.tscn" id="8_hegu4"]
 [ext_resource type="PackedScene" uid="uid://kkdc1xmxnc11" path="res://Scenes/friend.tscn" id="8_unc1f"]
 [ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="9_hegu4"]
+[ext_resource type="PackedScene" uid="uid://bbh2lekjodwby" path="res://Scenes/enemy_shoot_td.tscn" id="10_dr886"]
+[ext_resource type="PackedScene" uid="uid://cb73sl7ydq0u2" path="res://Scenes/enemy_td.tscn" id="11_r17ud"]
+[ext_resource type="PackedScene" uid="uid://pkf5mb1sekkc" path="res://Scenes/gear.tscn" id="12_r17ud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pj1e0"]
 atlas = ExtResource("9_hegu4")
@@ -26,6 +29,14 @@ region = Rect2(909.25, 2309.31, 482.625, 249.75)
 [sub_resource type="AtlasTexture" id="AtlasTexture_r17ud"]
 atlas = ExtResource("9_hegu4")
 region = Rect2(1125.25, 2029.19, 195.75, 266.625)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mggpn"]
+atlas = ExtResource("9_hegu4")
+region = Rect2(608.875, 2572.56, 705.375, 178.875)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8tqi"]
+atlas = ExtResource("9_hegu4")
+region = Rect2(1159, 2052.81, 131.625, 226.125)
 
 [node name="P2Room6" type="Node2D"]
 script = ExtResource("1_rs3xk")
@@ -81,9 +92,6 @@ position = Vector2(405.019, -15.001)
 rotation = 1.51622
 texture = SubResource("AtlasTexture_5yk2i")
 
-[node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("3_vaw3o")]
-position = Vector2(2070, 2055)
-
 [node name="Core_Sign" type="Sprite2D" parent="."]
 position = Vector2(1540, 33)
 scale = Vector2(0.169771, 0.169771)
@@ -92,3 +100,88 @@ texture = SubResource("AtlasTexture_dr886")
 [node name="Core_Arrow" type="Sprite2D" parent="Core_Sign"]
 position = Vector2(347.527, -5.89028)
 texture = SubResource("AtlasTexture_r17ud")
+
+[node name="Enemy_Shoot_TD" parent="." groups=["Enemies"] instance=ExtResource("10_dr886")]
+position = Vector2(4714, 1620)
+
+[node name="Enemy_Shoot_TD2" parent="." groups=["Enemies"] instance=ExtResource("10_dr886")]
+position = Vector2(4605, 1619)
+
+[node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("11_r17ud")]
+position = Vector2(4488, 1614)
+
+[node name="Enemy_TD2" parent="." groups=["Enemies"] instance=ExtResource("11_r17ud")]
+position = Vector2(4379, 1616)
+
+[node name="Enemy_Shoot_TD3" parent="." groups=["Enemies"] instance=ExtResource("10_dr886")]
+position = Vector2(4273, 1614)
+
+[node name="Enemy_TD3" parent="." groups=["Enemies"] instance=ExtResource("11_r17ud")]
+position = Vector2(4167, 1613)
+
+[node name="Enemy_Shoot_TD4" parent="." groups=["Enemies"] instance=ExtResource("10_dr886")]
+position = Vector2(1750, 1510)
+
+[node name="Enemy_TD4" parent="." groups=["Enemies"] instance=ExtResource("11_r17ud")]
+position = Vector2(2385, 1647)
+
+[node name="Enemy_Shoot_TD5" parent="." groups=["Enemies"] instance=ExtResource("10_dr886")]
+position = Vector2(2067, 349)
+
+[node name="Enemy_TD5" parent="." groups=["Enemies"] instance=ExtResource("11_r17ud")]
+position = Vector2(3002, 153)
+
+[node name="Gear" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(1851, 1927)
+
+[node name="Gear2" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(2462, 1822)
+
+[node name="Gear3" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(1553, 1675)
+
+[node name="Gear4" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(2119, 1507)
+
+[node name="Gear5" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(2964, 1722)
+
+[node name="Gear6" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(3366, 1359)
+
+[node name="Gear7" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(3600, 1723)
+
+[node name="Gear8" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(3771, 1461)
+
+[node name="Gear9" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(1577, 1235)
+
+[node name="Gear10" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(1979, 917)
+
+[node name="Gear11" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(2778, 898)
+
+[node name="Gear12" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(2411, 434)
+
+[node name="Gear13" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(2770, 161)
+
+[node name="Gear14" parent="." instance=ExtResource("12_r17ud")]
+position = Vector2(1551, 265)
+
+[node name="Bathroom_Sign" type="Sprite2D" parent="."]
+position = Vector2(2836, 1629)
+scale = Vector2(0.28, 0.28)
+texture = SubResource("AtlasTexture_mggpn")
+
+[node name="Bathroom_Arrow" type="Sprite2D" parent="Bathroom_Sign"]
+position = Vector2(471.429, 17.8571)
+rotation = 1.55128
+texture = SubResource("AtlasTexture_n8tqi")
+
+[node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("3_vaw3o")]
+position = Vector2(2070, 2055)

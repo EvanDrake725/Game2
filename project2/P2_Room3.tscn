@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jewhsqy8q1xb"]
+[gd_scene load_steps=16 format=3 uid="uid://jewhsqy8q1xb"]
 
 [ext_resource type="Script" uid="uid://coo42ysxm0ust" path="res://Script/p_2_room_3.gd" id="1_t6h5w"]
 [ext_resource type="PackedScene" uid="uid://blip4s5syru31" path="res://Scenes/room_change.tscn" id="2_6o5pq"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://djjgduq3pvylu" path="res://Scenes/friend_terminal.tscn" id="6_h84ti"]
 [ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="8_h84ti"]
 [ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="10_r3ipq"]
+[ext_resource type="PackedScene" uid="uid://cb73sl7ydq0u2" path="res://Scenes/enemy_td.tscn" id="12_w60fq"]
+[ext_resource type="PackedScene" uid="uid://bbh2lekjodwby" path="res://Scenes/enemy_shoot_td.tscn" id="13_aj70n"]
+[ext_resource type="PackedScene" uid="uid://pkf5mb1sekkc" path="res://Scenes/gear.tscn" id="14_aj70n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ntagj"]
 atlas = ExtResource("10_r3ipq")
@@ -61,9 +64,42 @@ position = Vector2(589, 1368)
 scale = Vector2(0.200004, 0.200004)
 texture = SubResource("AtlasTexture_ntagj")
 
-[node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("3_703c3")]
-position = Vector2(-64, 2107)
-
 [node name="Garbage_Pile" parent="." instance=ExtResource("5_1hj3t")]
 position = Vector2(1041, 783)
 scale = Vector2(5.12, 5.12)
+
+[node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("12_w60fq")]
+position = Vector2(139, 1913)
+
+[node name="Enemy_Shoot_TD" parent="." groups=["Enemies"] instance=ExtResource("13_aj70n")]
+position = Vector2(67, 1506)
+
+[node name="Enemy_Shoot_TD2" parent="." groups=["Enemies"] instance=ExtResource("13_aj70n")]
+position = Vector2(321, 565)
+
+[node name="Gear" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(85, 2022)
+
+[node name="Gear2" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(217, 1778)
+
+[node name="Gear3" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(96, 1625)
+
+[node name="Gear4" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(587, 1480)
+
+[node name="Gear5" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(637, 1205)
+
+[node name="Gear6" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(130, 1048)
+
+[node name="Gear7" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(148, 232)
+
+[node name="Gear8" parent="." instance=ExtResource("14_aj70n")]
+position = Vector2(904, 786)
+
+[node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("3_703c3")]
+position = Vector2(-64, 2107)

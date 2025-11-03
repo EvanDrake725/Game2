@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 			print("hit")
 			
 		if (Input.is_action_just_pressed("Heal")):
-			if TdController.Gears_Collected>=1:
+			if TdController.Gears_Collected>=1 and TdController.Health<=2:
 				TdController.Health_Gain()
 				TdController.Loose_Gear()
 		$Sword_Center/Sword.look_at(get_global_mouse_position())

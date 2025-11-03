@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1uesmuqif3j0"]
+[gd_scene load_steps=11 format=3 uid="uid://1uesmuqif3j0"]
 
 [ext_resource type="Script" uid="uid://consbage7nr70" path="res://Script/p_2_room_5.gd" id="1_cbnro"]
 [ext_resource type="TileSet" uid="uid://cv782py16sv2w" path="res://Sprites/BackGround.tres" id="2_0lrpc"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://wncwry54i1x1" path="res://Scenes/player_td.tscn" id="3_hlos1"]
 [ext_resource type="PackedScene" uid="uid://ddmqnbkuqksli" path="res://Scenes/ui.tscn" id="4_3gita"]
 [ext_resource type="PackedScene" uid="uid://kkdc1xmxnc11" path="res://Scenes/friend.tscn" id="6_p0np5"]
+[ext_resource type="PackedScene" uid="uid://bbh2lekjodwby" path="res://Scenes/enemy_shoot_td.tscn" id="7_ddjtw"]
+[ext_resource type="PackedScene" uid="uid://cb73sl7ydq0u2" path="res://Scenes/enemy_td.tscn" id="8_yqoqc"]
+[ext_resource type="PackedScene" uid="uid://pkf5mb1sekkc" path="res://Scenes/gear.tscn" id="10_yqoqc"]
 
 [node name="P2Room5" type="Node2D"]
 script = ExtResource("1_cbnro")
@@ -36,6 +39,72 @@ Direction = "forward"
 
 [node name="Friend" parent="." instance=ExtResource("6_p0np5")]
 position = Vector2(327, -36)
+
+[node name="Enemy_Shoot_TD" parent="." groups=["Enemies"] instance=ExtResource("7_ddjtw")]
+position = Vector2(787, 2210)
+
+[node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("8_yqoqc")]
+position = Vector2(1305, 2559)
+
+[node name="Enemy_Shoot_TD2" parent="." groups=["Enemies"] instance=ExtResource("7_ddjtw")]
+position = Vector2(83, 1299)
+
+[node name="Enemy_Shoot_TD3" parent="." groups=["Enemies"] instance=ExtResource("7_ddjtw")]
+position = Vector2(488, 973)
+
+[node name="Enemy_TD2" parent="." groups=["Enemies"] instance=ExtResource("8_yqoqc")]
+position = Vector2(540, 1428)
+
+[node name="Enemy_TD3" parent="." groups=["Enemies"] instance=ExtResource("8_yqoqc")]
+position = Vector2(918, 1123)
+
+[node name="Enemy_TD5" parent="." groups=["Enemies"] instance=ExtResource("8_yqoqc")]
+position = Vector2(113, 142)
+
+[node name="Enemy_Shoot_TD4" parent="." groups=["Enemies"] instance=ExtResource("7_ddjtw")]
+position = Vector2(513, 333)
+
+[node name="Gear" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(1014, 2845)
+
+[node name="Gear2" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(1111, 2613)
+
+[node name="Gear3" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(875, 2465)
+
+[node name="Gear4" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(1221, 2217)
+
+[node name="Gear5" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(672, 2077)
+
+[node name="Gear6" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(229, 1611)
+
+[node name="Gear7" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(286, 761)
+
+[node name="Gear8" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(231, 1068)
+
+[node name="Gear9" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(1067, 1348)
+
+[node name="Gear10" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(1273, 970)
+
+[node name="Gear11" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(132, 297)
+
+[node name="Gear12" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(693, 69)
+
+[node name="Gear13" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(850, 271)
+
+[node name="Gear14" parent="." instance=ExtResource("10_yqoqc")]
+position = Vector2(1188, 130)
 
 [node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("3_hlos1")]
 position = Vector2(458, -39)

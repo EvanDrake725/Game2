@@ -27,7 +27,7 @@ layer_0/tile_data = PackedInt32Array(1310709, 65536, 1, 1376245, 65536, 2, 14417
 [node name="UI" parent="." instance=ExtResource("2_y2wcx")]
 
 [node name="Gear" parent="." instance=ExtResource("3_y2wcx")]
-position = Vector2(150, 157)
+position = Vector2(131, 358)
 
 [node name="RoomChange" parent="." instance=ExtResource("4_ysj0k")]
 position = Vector2(-134, 346)
@@ -36,10 +36,10 @@ Room_To_Change = "uid://b764o84tsdtkh"
 Direction = "back"
 
 [node name="Enemy_TD" parent="." groups=["Enemies"] instance=ExtResource("5_181f7")]
-position = Vector2(424, 166)
+position = Vector2(616, 280)
 
 [node name="Enemy_Shoot_TD" parent="." groups=["Enemies"] instance=ExtResource("6_scjtw")]
-position = Vector2(895, 320)
+position = Vector2(113, 666)
 
 [node name="Friend" parent="." instance=ExtResource("7_lgju5")]
 position = Vector2(562, 137)
@@ -49,6 +49,39 @@ position = Vector2(1967, 585)
 scale = Vector2(2.2, 3.17032)
 Room_To_Change = "uid://jewhsqy8q1xb"
 Direction = "forward"
+
+[node name="Enemy_Shoot_TD2" parent="." groups=["Enemies"] instance=ExtResource("6_scjtw")]
+position = Vector2(756, 685)
+
+[node name="Enemy_TD2" parent="." groups=["Enemies"] instance=ExtResource("5_181f7")]
+position = Vector2(415, 1071)
+
+[node name="Enemy_Shoot_TD3" parent="." groups=["Enemies"] instance=ExtResource("6_scjtw")]
+position = Vector2(1434, 573)
+
+[node name="Enemy_Shoot_TD4" parent="." groups=["Enemies"] instance=ExtResource("6_scjtw")]
+position = Vector2(1033, 1174)
+
+[node name="Gear2" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(274, 537)
+
+[node name="Gear3" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(704, 412)
+
+[node name="Gear4" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(561, 658)
+
+[node name="Gear5" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(246, 881)
+
+[node name="Gear6" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(813, 1040)
+
+[node name="Gear7" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(1505, 940)
+
+[node name="Gear8" parent="." instance=ExtResource("3_y2wcx")]
+position = Vector2(1565, 663)
 
 [node name="Player_TD" parent="." groups=["Player"] instance=ExtResource("1_umown")]
 position = Vector2(1900, 585)
