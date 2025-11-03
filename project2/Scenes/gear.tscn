@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://pkf5mb1sekkc"]
+[gd_scene load_steps=6 format=3 uid="uid://pkf5mb1sekkc"]
 
 [ext_resource type="Script" uid="uid://b0cmue3ggdyw0" path="res://Script/gear.gd" id="1_7vd1c"]
 [ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="2_7vd1c"]
+[ext_resource type="AudioStream" uid="uid://dq46vwkypsnpl" path="res://Sounds/pickupCoin (1).wav" id="3_1sowc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_03bqu"]
 
@@ -19,5 +20,8 @@ shape = SubResource("CircleShape2D_03bqu")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0566045, 0.0566045)
 texture = SubResource("AtlasTexture_1sowc")
+
+[node name="Picked_Up" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1sowc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

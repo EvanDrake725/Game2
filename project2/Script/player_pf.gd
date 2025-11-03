@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			$SFX/Jump.play()
 			
 
 		# Get the input direction and handle the movement/deceleration.
@@ -36,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		$Death_Screen_PF.show()
+		$SFX/Dead.play()
 		if Input.is_action_pressed("Restart"):
 			get_tree().reload_current_scene()
 			Alive=true

@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 			if TdController.Gears_Collected>=1 and TdController.Health<=2:
 				TdController.Health_Gain()
 				TdController.Loose_Gear()
+				$Healing.play()
 		$Sword_Center/Sword.look_at(get_global_mouse_position())
 		move_and_slide()
 	else:

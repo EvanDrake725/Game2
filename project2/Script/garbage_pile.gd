@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 		TdController.Follower()
 		TdController.Garbage_Used=true
 		$Friend_Got_Screen.show()
+		$Friend_Noise.play()
 	pass
 
 
@@ -23,4 +24,5 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	used=false
 	$Friend_Got_Screen.hide()
+	
 	pass # Replace with function body.

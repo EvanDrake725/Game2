@@ -37,9 +37,11 @@ func fire():
 		var new_bullet=bullet.instantiate()
 		new_bullet.transform=$Canon.transform
 		$Bullets.add_child(new_bullet)
+		$SFX/Shootin.play()
 		time_since=0
 	
 func hit():
 	Health-=1
+	$SFX/Dead.play()
 	if Health<=0:
 		self.queue_free()

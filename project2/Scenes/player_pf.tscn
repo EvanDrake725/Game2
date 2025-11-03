@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp2qn003pxckj"]
+[gd_scene load_steps=9 format=3 uid="uid://cp2qn003pxckj"]
 
 [ext_resource type="Script" uid="uid://bn4aee4o7uofy" path="res://Script/player_pf.gd" id="1_vwuyn"]
 [ext_resource type="SpriteFrames" uid="uid://pyr2hlw0urh6" path="res://Sprites/PF_Player_Sprites.tres" id="2_vwuyn"]
 [ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="3_e5bjy"]
+[ext_resource type="AudioStream" uid="uid://dvqyj5t8u05an" path="res://Sounds/explosion.wav" id="4_x8erq"]
+[ext_resource type="AudioStream" uid="uid://b0xqqffpql7oh" path="res://Sounds/jump.wav" id="5_7d0h6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e5bjy"]
 
@@ -43,3 +45,11 @@ texture = SubResource("AtlasTexture_x8erq")
 [node name="Death_Screen_PF_Text" type="Sprite2D" parent="Death_Screen_PF"]
 position = Vector2(-356, 3)
 texture = SubResource("AtlasTexture_7d0h6")
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_x8erq")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_7d0h6")

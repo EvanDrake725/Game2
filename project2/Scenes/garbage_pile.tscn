@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfltky6iifsxg"]
+[gd_scene load_steps=13 format=3 uid="uid://cfltky6iifsxg"]
 
 [ext_resource type="Script" uid="uid://may340832gkm" path="res://Script/garbage_pile.gd" id="1_xouhs"]
 [ext_resource type="Script" uid="uid://bpyykb0jh3h5w" path="res://Script/garbage_animator.gd" id="2_o7333"]
 [ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="2_xouhs"]
 [ext_resource type="Texture2D" uid="uid://dhpocand4rjpd" path="res://Sprites/enemy_assets.png" id="4_vfnn2"]
+[ext_resource type="AudioStream" uid="uid://gfgix2lw5chs" path="res://Sounds/powerUp.wav" id="5_j33xw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_122aq"]
 
@@ -76,6 +77,9 @@ visible = false
 position = Vector2(-16.6667, 2.8607)
 scale = Vector2(0.106268, 0.106268)
 texture = SubResource("AtlasTexture_s4f7s")
+
+[node name="Friend_Noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_j33xw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

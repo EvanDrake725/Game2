@@ -12,6 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Used==true:
 		if Input.is_action_just_pressed("Interact") and TdController.Group==true and Finished==false:
+			$Using.play()
 			get_tree().change_scene_to_file(PlatformLevel)
 	pass
 

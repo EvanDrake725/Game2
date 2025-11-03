@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://wncwry54i1x1"]
+[gd_scene load_steps=12 format=3 uid="uid://wncwry54i1x1"]
 
 [ext_resource type="Script" uid="uid://dilytulokg4k3" path="res://Script/player_td.gd" id="1_436xv"]
 [ext_resource type="SpriteFrames" uid="uid://pyr2hlw0urh6" path="res://Sprites/PF_Player_Sprites.tres" id="2_tcu1o"]
 [ext_resource type="Texture2D" uid="uid://bp8pk4fdjtbgt" path="res://Sprites/rand.assets.png" id="3_5xpr2"]
 [ext_resource type="Script" uid="uid://ctimkbnplpkkn" path="res://Script/player_animator.gd" id="4_5xpr2"]
 [ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="5_i0vh4"]
+[ext_resource type="AudioStream" uid="uid://b06pbusygq8uk" path="res://Sounds/pickupCoin.wav" id="6_3w7hk"]
+[ext_resource type="AudioStream" uid="uid://c54vwhaj0g5ug" path="res://Sounds/One Man Symphony - After The Disaster (Free) - 02 Night Time Scavenge I (Loops).mp3" id="6_mntbs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
 height = 23.9726
@@ -67,5 +69,13 @@ texture = SubResource("AtlasTexture_mntbs")
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.602739, 0.602739)
 zoom = Vector2(1.25, 1.25)
+
+[node name="Healing" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1)
+stream = ExtResource("6_3w7hk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_mntbs")
+autoplay = true
 
 [connection signal="body_entered" from="Sword_Center/Sword" to="." method="_on_sword_body_entered"]

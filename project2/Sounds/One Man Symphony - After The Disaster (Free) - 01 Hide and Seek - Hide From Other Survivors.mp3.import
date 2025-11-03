@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brgulexr73blu"
+path="res://.godot/imported/One Man Symphony - After The Disaster (Free) - 01 Hide and Seek - Hide From Other Survivors.mp3-225c4f4321f6b8f124ac7e89f7fb984f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/One Man Symphony - After The Disaster (Free) - 01 Hide and Seek - Hide From Other Survivors.mp3"
+dest_files=["res://.godot/imported/One Man Symphony - After The Disaster (Free) - 01 Hide and Seek - Hide From Other Survivors.mp3-225c4f4321f6b8f124ac7e89f7fb984f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

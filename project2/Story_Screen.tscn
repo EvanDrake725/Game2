@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkpvpgiypd8n8"]
+[gd_scene load_steps=8 format=3 uid="uid://bkpvpgiypd8n8"]
 
 [ext_resource type="Texture2D" uid="uid://nq6t2pxtrpal" path="res://Sprites/TEE_screens.png" id="1_mjckp"]
 [ext_resource type="Script" uid="uid://b8n3pkp1pliv0" path="res://Script/stroy_start.gd" id="2_qlwg2"]
 [ext_resource type="Texture2D" uid="uid://dsyoyexx1enuu" path="res://Sprites/Dead_Screens.png" id="3_onjka"]
+[ext_resource type="AudioStream" uid="uid://c8q4luqfvh0h2" path="res://Sounds/One Man Symphony - After The Disaster (Free) - 03 Night Time Scavenge II (Loops).mp3" id="4_onjka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxhva"]
 atlas = ExtResource("1_mjckp")
@@ -35,5 +36,9 @@ texture = SubResource("AtlasTexture_12xg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stroy_Start"]
 shape = SubResource("RectangleShape2D_vvkj7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_onjka")
+autoplay = true
 
 [connection signal="input_event" from="Stroy_Start" to="Stroy_Start" method="_on_input_event"]

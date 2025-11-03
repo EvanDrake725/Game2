@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbh2lekjodwby"]
+[gd_scene load_steps=8 format=3 uid="uid://bbh2lekjodwby"]
 
 [ext_resource type="Script" uid="uid://b30gnw2uf8ayx" path="res://Script/enemy_shoot_td.gd" id="1_m623f"]
 [ext_resource type="Texture2D" uid="uid://dhpocand4rjpd" path="res://Sprites/enemy_assets.png" id="2_m623f"]
+[ext_resource type="AudioStream" uid="uid://br082yvhmdaft" path="res://Sounds/explosion (1).wav" id="3_ao7l1"]
+[ext_resource type="AudioStream" uid="uid://dyequhfqkbb6a" path="res://Sounds/synth.wav" id="4_70mlm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7aus"]
 
@@ -37,3 +39,11 @@ position = Vector2(66.6667, 4.16667)
 rotation = 1.57764
 scale = Vector2(0.347995, 0.347995)
 texture = SubResource("AtlasTexture_70mlm")
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("3_ao7l1")
+
+[node name="Shootin" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_70mlm")

@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func hit():
 	Health-=1
+	$SFX/Dead.play()
 	if Health<=0:
 		self.queue_free()
 

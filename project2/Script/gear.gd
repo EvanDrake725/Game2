@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="Player_TD":
+		$Picked_Up.play()
 		TdController.Collect_Gears()
 		self.queue_free()
 	pass # Replace with function body.
